@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. 獲取「模式切換」按鈕和 <body> 元素
-    const themeToggleButton = document.getElementById('theme-toggle');
-    const bodyElement = document.body;
+    // 獲取「模式切換」按鈕和 <body> 元素
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
 
-    // 2. 檢查按鈕是否存在，以避免錯誤
-    if (themeToggleButton) {
-        // 3. 為按鈕添加一個 click 事件監聽器
-        themeToggleButton.addEventListener('click', () => {
-            // 4. 當按鈕被點擊時，切換 body 上的 'light-mode' class
-            bodyElement.classList.toggle('light-mode');
-        });
-    }
+    // 為按鈕添加點擊事件監聽器
+    themeToggleBtn.addEventListener('click', () => {
+        // 切換 body 元素的 'light-mode' class
+        // classList.toggle() 會在 class 存在時移除它，不存在時新增它
+        body.classList.toggle('light-mode');
+    });
 });
