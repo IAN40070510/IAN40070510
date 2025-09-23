@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林柏璋 IAN - 全端網頁開發者</title>
+    <title>林柏璋 IAN - 網頁開發作品集</title>
+    <meta name="description" content="林柏璋 (IAN) 的個人作品集網站，展示其在網頁開發、UI/UX 設計與資訊財金領域的專業技能。">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,44 +21,53 @@
 
     <header>
         <nav>
-            <div class="logo">個人網站</div>
+            <a href="#" class="logo">IAN LIN</a>
             <ul>
                 <li><a href="#about">關於我</a></li>
                 <li><a href="#projects">專案作品</a></li>
                 <li><a href="#contact">聯絡方式</a></li>
             </ul>
-            <button id="theme-toggle">切換模式</button>
+            <button id="theme-toggle" aria-label="切換色彩模式">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </button>
         </nav>
     </header>
 
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>林柏璋 IAN</h1>
-                <p>國立台北科技大學 資訊與財金管理系</p>
+                <h1 class="hero-title">林柏璋 IAN</h1>
+                <p class="hero-subtitle">國立台北科技大學 資訊與財金管理系</p>
                 <a href="#projects" class="cta-button">查看我的作品</a>
             </div>
         </section>
 
         <section id="about">
             <h2>關於我</h2>
-            <p>你好！我是一位經驗豐富的全端開發者，專注於 JavaScript 技術棧，包括 React、Node.js 和 Vue。我致力於撰寫乾淨、可維護的程式碼，並對資訊安全與使用者體驗有著高度的熱情。</p>
+            <p>你好！我是一位對解決問題充滿熱情的開發者，專注於打造兼具卓越使用者體驗與穩固後端架構的網頁應用。我擅長運用 JavaScript 生態系，包含 React、Node.js，並持續探索新技術，致力於將冰冷的程式碼轉化為富有溫度的互動體驗。</p>
         </section>
 
         <section id="projects">
             <h2>專案作品</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>專案一：電商平台</h3>
-                    <p>使用 MERN 技術棧打造的全功能電商網站，具備會員系統、購物車與金流串接。</p>
+                    <div class="card-content">
+                        <h3>專案一：電商平台</h3>
+                        <p>使用 MERN 技術棧打造的全功能電商網站，具備會員系統、購物車與金流串接。</p>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>專案二：互動式數據儀表板</h3>
-                    <p>使用 D3.js 和 React 實現的數據視覺化儀表板，提供即時的數據分析與互動圖表。</p>
+                    <div class="card-content">
+                        <h3>專案二：互動式數據儀表板</h3>
+                        <p>使用 D3.js 和 React 實現的數據視覺化儀表板，提供即時的數據分析與互動圖表。</p>
+                    </div>
                 </div>
                 <div class="project-card">
-                    <h3>專案三：個人部落格</h3>
-                    <p>透過 Next.js 與 Markdown 建立的靜態生成部落格，載入速度極快且利於 SEO。</p>
+                    <div class="card-content">
+                        <h3>專案三：個人部落格</h3>
+                        <p>透過 Next.js 與 Markdown 建立的靜態生成部落格，載入速度極快且利於 SEO。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -66,10 +76,10 @@
             <h2>聯絡方式</h2>
             <p>期待與您合作！歡迎透過以下方式與我聯繫：</p>
             <div class="contact-links">
-                <a href="mailto:your-email@example.com">
-                    <i class="fas fa-envelope"></i> your-email@example.com
+                <a href="mailto:brianlin@gmail.com">
+                    <i class="fas fa-envelope"></i> brianlin@gmail.com
                 </a>
-                <a href="https://github.com/username" target="_blank">
+                <a href="https://github.com/brianlin0212" target="_blank">
                     <i class="fab fa-github"></i> GitHub
                 </a>
                 <a href="https://linkedin.com/in/username" target="_blank">
@@ -80,10 +90,10 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 林柏璋 IAN. All Rights Reserved.</p>
+        <p>&copy; 2025 林柏璋 IAN. Designed with passion.</p>
         <div class="social-icons">
-            <a href="https://github.com/username" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/username" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/brianlin0212" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/username" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
 
