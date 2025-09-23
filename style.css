@@ -1,153 +1,217 @@
-/* --- 全域與基本設定 --- */
+/* --- Global Styles & Dark Mode (Default) --- */
 :root {
-    --bg-color: #1a202c;
-    --card-bg-color: #2d3748;
-    --primary-color: #4fd1c5;
-    --text-color: #f7fafc;
-    --header-font: 'Montserrat', sans-serif;
-    --body-font: 'Roboto', sans-serif;
-}
-
-html {
-    scroll-behavior: smooth; /* 讓頁內跳轉更流暢 */
+    --primary-color: #6366f1; /* 主色調 */
+    --primary-hover-color: #4f46e5;
+    --dark-bg: #1a202c;       /* 深色背景 */
+    --dark-card-bg: #2d3748;  /* 深色卡片背景 */
+    --dark-text: #f7fafc;      /* 深色模式文字 */
+    --light-bg: #f7fafc;      /* 淺色背景 */
+    --light-card-bg: #ffffff; /* 淺色卡片背景 */
+    --light-text: #1a202c;     /* 淺色模式文字 */
+    --border-color: #4a5568;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--body-font);
-    line-height: 1.6;
+    font-family: 'Noto Sans TC', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* --- 通用元件樣式 --- */
-h1, h2, h3 {
-    font-family: var(--header-font);
-    color: var(--primary-color);
+/* --- Light Mode Styles --- */
+body.light-mode {
+    background-color: var(--light-bg);
+    color: var(--light-text);
 }
 
-a {
-    color: var(--primary-color);
-    text-decoration: none;
+body.light-mode header {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid #e2e8f0;
 }
 
-.content-section {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
+body.light-mode .project-card {
+    background-color: var(--light-card-bg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* --- 導覽列 --- */
-.navbar {
+body.light-mode .contact-links a {
+    color: var(--light-text);
+}
+
+
+/* --- Keyframes for Fade-in Animation --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Layout & Components --- */
+header {
+    background-color: rgba(26, 32, 44, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
-    background-color: rgba(45, 55, 72, 0.85);
-    backdrop-filter: blur(10px);
     z-index: 1000;
 }
 
-.navbar nav ul {
+nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+nav .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+nav ul {
     list-style: none;
-    margin: 0;
-    padding: 1rem 0;
+    display: flex;
+    gap: 2rem;
 }
 
-.navbar nav ul li {
-    margin: 0 1.5rem;
+nav a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
 }
 
-.navbar nav ul li a {
-    color: var(--text-color);
-    font-weight: bold;
-    transition: color 0.3s ease;
+main {
+    padding-top: 80px; /* Offset for fixed header */
 }
 
-.navbar nav ul li a:hover {
-    color: var(--primary-color);
+section {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2rem;
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* --- 英雄區塊 --- */
-.hero-section {
+#hero {
+    text-align: center;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    text-align: center;
-    padding: 0 1rem;
 }
 
-.hero-section h1 {
+#hero h1 {
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
 }
 
-.hero-section p {
-    font-size: 1.5rem;
-    color: var(--text-color);
+#hero p {
+    font-size: 1.25rem;
+    color: #a0aec0;
 }
 
-/* --- 專案區塊 --- */
-.project-container {
+/* --- Buttons & Interactive Elements --- */
+.cta-button, #theme-toggle {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover, #theme-toggle:hover {
+    background-color: var(--primary-hover-color);
+    transform: scale(1.05);
+}
+
+#theme-toggle {
+    padding: 0.5rem 1rem;
+}
+
+
+/* --- Project Section --- */
+.project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     margin-top: 2rem;
 }
 
 .project-card {
-    background-color: var(--card-bg-color);
+    background-color: var(--dark-card-bg);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
-.project-card h3 {
-    margin-top: 0;
-}
-
-/* --- 聯絡方式 --- */
-.contact-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-    padding: 0.8rem 1.6rem;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.contact-button:hover {
-    background-color: #38b2ac; /* 加深強調色 */
-}
-
-/* --- 頁尾 --- */
-.footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    background-color: var(--card-bg-color);
+/* --- Contact Section --- */
+.contact-links {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.footer .social-links a {
-    margin: 0 1rem;
-    font-size: 1.2rem;
+.contact-links a {
+    color: var(--dark-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
-.footer p {
+.contact-links a:hover {
+    color: var(--primary-color);
+}
+
+.contact-links i {
+    margin-right: 0.75rem;
+    width: 20px; /* Align icons */
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+}
+
+.social-icons {
     margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #a0aec0; /* 較淡的文字顏色 */
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: inherit;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
 }
