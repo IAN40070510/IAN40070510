@@ -185,10 +185,10 @@ body.light-mode .project-card {
 .project-card:hover {
     transform: translateY(-5px);
     /* 霓虹光暈效果 */
-    box-shadow: 0 0 20px rgba(0, 245, 195, 0.5); 
+    box-shadow: 0 0 20px rgba(0, 65, 245, 0.5); 
 }
 body.light-mode .project-card:hover {
-    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 8px 25px rgba(16, 103, 185, 0.2);
 }
 
 .project-card img {
