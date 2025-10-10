@@ -1,20 +1,31 @@
 /* --- CSS Variables (Blue Theme) --- */
 :root {
-    --dark-bg: #0d1b2a;      /* 深海軍藍 */
-    --dark-card-bg: #1b263b; /* 石板藍 */
-    --dark-text: #e0e1dd;     /* 淺灰 */
-    --dark-accent: #41a5f5;   /* 天藍色 */
-    --dark-border: #415a77;  /* 陰影藍 */
+    --dark-bg: #0d1b2a;
+    /* 深海軍藍 */
+    --dark-card-bg: #1b263b;
+    /* 石板藍 */
+    --dark-text: #e0e1dd;
+    /* 淺灰 */
+    --dark-accent: #41a5f5;
+    /* 天藍色 */
+    --dark-border: #415a77;
+    /* 陰影藍 */
 
-    --light-bg: #f0f8ff;     /* 愛麗絲藍 (極淺藍) */
+    --light-bg: #f0f8ff;
+    /* 愛麗絲藍 (極淺藍) */
     --light-card-bg: #ffffff;
-    --light-text: #0d1b2a;     /* 深海軍藍 */
-    --light-accent: #005fbd;   /* 皇家藍 */
-    --light-border: #d6e2f0;   /* 淺藍灰 */
+    --light-text: #0d1b2a;
+    /* 深海軍藍 */
+    --light-accent: #005fbd;
+    /* 皇家藍 */
+    --light-border: #d6e2f0;
+    /* 淺藍灰 */
 }
 
 /* --- Base & Reset --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -26,27 +37,28 @@ body {
     color: var(--dark-text);
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
-    
+
     /* --- 可替換的背景圖片 --- */
     /* 說明：下方 url() 中是圖片路徑，您可以替換成自己的圖片網址或本地路徑。 */
     /* linear-gradient 用於在圖片上疊加一層半透明顏色，確保文字清晰可讀。*/
-    background-image: 
+    background-image:
         linear-gradient(rgba(13, 27, 42, 0.85), rgba(13, 27, 42, 0.85)),
         url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80');
-    
+
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* 讓背景固定，產生視差滾動效果 */
+    background-attachment: fixed;
+    /* 讓背景固定，產生視差滾動效果 */
 }
 
 /* --- Light Mode Styles --- */
 body.light-mode {
     background-color: var(--light-bg);
     color: var(--light-text);
-    
+
     /* --- 淺色模式的背景圖片 --- */
-    background-image: 
+    background-image:
         linear-gradient(rgba(240, 248, 255, 0.9), rgba(240, 248, 255, 0.9)),
         url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80');
 }
@@ -67,16 +79,36 @@ body.light-mode section {
     border-bottom: 1px solid var(--light-border);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
-h1 { font-size: 3rem; text-shadow: 0 0 10px var(--dark-accent); }
-h2 { font-size: 2.2rem; text-align: center; margin-bottom: 2.5rem; }
-h3 { font-size: 1.5rem; color: var(--dark-accent); }
-body.light-mode h1 { text-shadow: none; }
-body.light-mode h3 { color: var(--light-accent); }
+h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 10px var(--dark-accent);
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--dark-accent);
+}
+
+body.light-mode h1 {
+    text-shadow: none;
+}
+
+body.light-mode h3 {
+    color: var(--light-accent);
+}
 
 /* --- Header & Navigation --- */
 header {
@@ -84,13 +116,15 @@ header {
     border-bottom: 1px solid var(--dark-border);
     position: sticky;
     top: 0;
-    background-color: rgba(13, 27, 42, 0.8); /* Dark BG with alpha */
+    background-color: rgba(13, 27, 42, 0.8);
+    /* Dark BG with alpha */
     backdrop-filter: blur(10px);
     z-index: 10;
 }
 
 body.light-mode header {
-    background-color: rgba(240, 248, 255, 0.8); /* Light BG with alpha */
+    background-color: rgba(240, 248, 255, 0.8);
+    /* Light BG with alpha */
     border-bottom: 1px solid var(--light-border);
 }
 
@@ -108,7 +142,10 @@ nav .logo {
     color: var(--dark-text);
     text-decoration: none;
 }
-body.light-mode nav .logo { color: var(--light-text); }
+
+body.light-mode nav .logo {
+    color: var(--light-text);
+}
 
 nav ul {
     display: flex;
@@ -121,9 +158,18 @@ nav a {
     text-decoration: none;
     transition: color 0.3s ease;
 }
-body.light-mode nav a { color: var(--light-text); }
-nav a:hover { color: var(--dark-accent); }
-body.light-mode nav a:hover { color: var(--light-accent); }
+
+body.light-mode nav a {
+    color: var(--light-text);
+}
+
+nav a:hover {
+    color: var(--dark-accent);
+}
+
+body.light-mode nav a:hover {
+    color: var(--light-accent);
+}
 
 
 /* --- Theme Toggle Button (Icon Style) --- */
@@ -140,10 +186,12 @@ body.light-mode nav a:hover { color: var(--light-accent); }
     place-items: center;
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
+
 body.light-mode #theme-toggle {
     border-color: var(--light-border);
     color: var(--light-text);
 }
+
 #theme-toggle:hover {
     background-color: var(--dark-accent);
     color: var(--dark-bg);
@@ -156,9 +204,17 @@ body.light-mode #theme-toggle:hover {
     box-shadow: 0 0 15px var(--light-accent);
 }
 
-#theme-toggle .fa-sun { display: none; }
-body.light-mode #theme-toggle .fa-moon { display: none; }
-body.light-mode #theme-toggle .fa-sun { display: block; }
+#theme-toggle .fa-sun {
+    display: none;
+}
+
+body.light-mode #theme-toggle .fa-moon {
+    display: none;
+}
+
+body.light-mode #theme-toggle .fa-sun {
+    display: block;
+}
 
 /* --- Hero Section --- */
 #hero {
@@ -232,13 +288,14 @@ body.light-mode #theme-toggle .fa-sun { display: block; }
 body.light-mode .project-card {
     background-color: var(--light-card-bg);
     border: 1px solid var(--light-border);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(65, 165, 245, 0.5); 
+    box-shadow: 0 0 20px rgba(65, 165, 245, 0.5);
 }
+
 body.light-mode .project-card:hover {
     box-shadow: 0 8px 25px rgba(0, 95, 189, 0.2);
 }
@@ -270,9 +327,11 @@ body.light-mode .project-card:hover {
     padding: 1.5rem;
     transition: transform 0.3s ease;
 }
+
 .list-item:hover {
     transform: translateX(10px);
 }
+
 .list-item h3 {
     margin-bottom: 0.5rem;
 }
@@ -284,7 +343,7 @@ body.light-mode .project-card:hover {
 body.light-mode .list-item {
     background-color: var(--light-card-bg);
     border-left-color: var(--light-accent);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 /* --- Button --- */
@@ -320,19 +379,26 @@ body.light-mode .btn:hover {
 #contact {
     text-align: center;
 }
+
 .contact-links a {
     color: var(--dark-accent);
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s;
 }
+
 .contact-links a:hover {
     color: var(--dark-text);
 }
-body.light-mode .contact-links a { color: var(--light-accent); }
+
+body.light-mode .contact-links a {
+    color: var(--light-accent);
+}
+
 body.light-mode .contact-links a:hover {
     color: var(--light-text);
 }
+
 .contact-links i {
     margin-right: 0.5rem;
 }
@@ -343,6 +409,7 @@ footer {
     padding: 2rem;
     border-top: 1px solid var(--dark-border);
 }
+
 body.light-mode footer {
     border-top: 1px solid var(--light-border);
 }
@@ -358,13 +425,19 @@ body.light-mode footer {
     transition: color 0.3s, transform 0.3s;
     display: inline-block;
 }
-body.light-mode .social-links a { color: var(--light-text); }
+
+body.light-mode .social-links a {
+    color: var(--light-text);
+}
 
 .social-links a:hover {
     color: var(--dark-accent);
     transform: scale(1.2);
 }
-body.light-mode .social-links a:hover { color: var(--light-accent); }
+
+body.light-mode .social-links a:hover {
+    color: var(--light-accent);
+}
 
 /* --- Animations --- */
 @keyframes fadeIn {
@@ -372,6 +445,7 @@ body.light-mode .social-links a:hover { color: var(--light-accent); }
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -380,4 +454,29 @@ body.light-mode .social-links a:hover { color: var(--light-accent); }
 
 .fade-in {
     animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* --- About Section: Skills Title & List --- */
+#about .skills-title {
+    color: var(--dark-text);
+    /* 深色模式文字 */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+body.light-mode #about .skills-title {
+    color: var(--light-text);
+    /* 淺色模式文字 */
+}
+
+#about .skills {
+    color: var(--dark-text);
+    line-height: 1.8;
+    text-align: left;
+    /* 可依喜好調整 */
+    margin-bottom: 2rem;
+}
+
+body.light-mode #about .skills {
+    color: var(--light-text);
 }
