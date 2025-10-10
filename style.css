@@ -1,16 +1,16 @@
-/* --- CSS Variables --- */
+/* --- CSS Variables (Blue Theme) --- */
 :root {
-    --dark-bg: #111827; /* Deeper Dark Blue */
-    --dark-card-bg: #1f2937;
-    --dark-text: #e5e7eb;
-    --dark-accent: #00edf5; 
-    --dark-border: #374151;
+    --dark-bg: #0d1b2a;      /* 深海軍藍 */
+    --dark-card-bg: #1b263b; /* 石板藍 */
+    --dark-text: #e0e1dd;     /* 淺灰 */
+    --dark-accent: #41a5f5;   /* 天藍色 */
+    --dark-border: #415a77;  /* 陰影藍 */
 
-    --light-bg: #f9fafb;
+    --light-bg: #f0f8ff;     /* 愛麗絲藍 (極淺藍) */
     --light-card-bg: #ffffff;
-    --light-text: #111827;
-    --light-accent: #1067b9; 
-    --light-border: #d1d5db;
+    --light-text: #0d1b2a;     /* 深海軍藍 */
+    --light-accent: #005fbd;   /* 皇家藍 */
+    --light-border: #d6e2f0;   /* 淺藍灰 */
 }
 
 /* --- Base & Reset --- */
@@ -26,20 +26,29 @@ body {
     color: var(--dark-text);
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* 幾何科技感背景 */
+    
+    /* --- 可替換的背景圖片 --- */
+    /* 說明：下方 url() 中是圖片路徑，您可以替換成自己的圖片網址或本地路徑。 */
+    /* linear-gradient 用於在圖片上疊加一層半透明顏色，確保文字清晰可讀。*/
     background-image: 
-        linear-gradient(45deg, var(--dark-border) 1px, transparent 1px),
-        linear-gradient(-45deg, var(--dark-border) 1px, transparent 1px);
-    background-size: 30px 30px;
+        linear-gradient(rgba(13, 27, 42, 0.85), rgba(13, 27, 42, 0.85)),
+        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80');
+    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* 讓背景固定，產生視差滾動效果 */
 }
 
 /* --- Light Mode Styles --- */
 body.light-mode {
     background-color: var(--light-bg);
     color: var(--light-text);
+    
+    /* --- 淺色模式的背景圖片 --- */
     background-image: 
-        linear-gradient(45deg, var(--light-border) 1px, transparent 1px),
-        linear-gradient(-45deg, var(--light-border) 1px, transparent 1px);
+        linear-gradient(rgba(240, 248, 255, 0.9), rgba(240, 248, 255, 0.9)),
+        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80');
 }
 
 /* --- General Layout --- */
@@ -75,13 +84,13 @@ header {
     border-bottom: 1px solid var(--dark-border);
     position: sticky;
     top: 0;
-    background-color: rgba(17, 24, 39, 0.8);
+    background-color: rgba(13, 27, 42, 0.8); /* Dark BG with alpha */
     backdrop-filter: blur(10px);
     z-index: 10;
 }
 
 body.light-mode header {
-    background-color: rgba(249, 250, 251, 0.8);
+    background-color: rgba(240, 248, 255, 0.8); /* Light BG with alpha */
     border-bottom: 1px solid var(--light-border);
 }
 
@@ -104,7 +113,7 @@ body.light-mode nav .logo { color: var(--light-text); }
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 nav a {
@@ -114,6 +123,8 @@ nav a {
 }
 body.light-mode nav a { color: var(--light-text); }
 nav a:hover { color: var(--dark-accent); }
+body.light-mode nav a:hover { color: var(--light-accent); }
+
 
 /* --- Theme Toggle Button (Icon Style) --- */
 #theme-toggle {
@@ -139,25 +150,68 @@ body.light-mode #theme-toggle {
     box-shadow: 0 0 15px var(--dark-accent);
 }
 
-/* 預設隱藏太陽(淺色模式圖示) */
+body.light-mode #theme-toggle:hover {
+    background-color: var(--light-accent);
+    color: var(--light-card-bg);
+    box-shadow: 0 0 15px var(--light-accent);
+}
+
 #theme-toggle .fa-sun { display: none; }
-/* 當啟用 light-mode 時，隱藏月亮 */
 body.light-mode #theme-toggle .fa-moon { display: none; }
-/* 當啟用 light-mode 時，顯示太陽 */
 body.light-mode #theme-toggle .fa-sun { display: block; }
 
 /* --- Hero Section --- */
 #hero {
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 60vh;
+    min-height: 80vh;
+    padding: 2rem 0;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
 }
 
 .hero-content .subtitle {
     font-size: 1.2rem;
     opacity: 0.8;
+}
+
+.hero-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid var(--dark-accent);
+    box-shadow: 0 0 25px rgba(65, 165, 245, 0.5);
+}
+
+@media (max-width: 768px) {
+    #hero {
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        margin-bottom: 2rem;
+    }
+}
+
+/* --- About Section --- */
+#about {
+    text-align: center;
 }
 
 /* --- Projects Section --- */
@@ -172,7 +226,6 @@ body.light-mode #theme-toggle .fa-sun { display: block; }
     border: 1px solid var(--dark-border);
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* 幾何切角效果 */
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 
@@ -184,11 +237,10 @@ body.light-mode .project-card {
 
 .project-card:hover {
     transform: translateY(-5px);
-    /* 霓虹光暈效果 */
-    box-shadow: 0 0 20px rgba(0, 65, 245, 0.5); 
+    box-shadow: 0 0 20px rgba(65, 165, 245, 0.5); 
 }
 body.light-mode .project-card:hover {
-    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 95, 189, 0.2);
 }
 
 .project-card img {
@@ -203,6 +255,39 @@ body.light-mode .project-card:hover {
     margin-bottom: 1.5rem;
 }
 
+/* --- Competitions & Licenses Section Styling --- */
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.list-item {
+    background-color: var(--dark-card-bg);
+    border-left: 5px solid var(--dark-accent);
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+.list-item:hover {
+    transform: translateX(10px);
+}
+.list-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+.list-item h3:last-child {
+    margin-bottom: 0;
+}
+
+body.light-mode .list-item {
+    background-color: var(--light-card-bg);
+    border-left-color: var(--light-accent);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* --- Button --- */
 .btn {
     display: inline-block;
     background-color: transparent;
@@ -220,6 +305,17 @@ body.light-mode .project-card:hover {
     box-shadow: 0 0 15px var(--dark-accent);
 }
 
+body.light-mode .btn {
+    color: var(--light-accent);
+    border-color: var(--light-accent);
+}
+
+body.light-mode .btn:hover {
+    background-color: var(--light-accent);
+    color: var(--light-card-bg);
+    box-shadow: 0 0 15px var(--light-accent);
+}
+
 /* --- Contact Section --- */
 #contact {
     text-align: center;
@@ -233,6 +329,7 @@ body.light-mode .project-card:hover {
 .contact-links a:hover {
     color: var(--dark-text);
 }
+body.light-mode .contact-links a { color: var(--light-accent); }
 body.light-mode .contact-links a:hover {
     color: var(--light-text);
 }
@@ -244,6 +341,10 @@ body.light-mode .contact-links a:hover {
 footer {
     text-align: center;
     padding: 2rem;
+    border-top: 1px solid var(--dark-border);
+}
+body.light-mode footer {
+    border-top: 1px solid var(--light-border);
 }
 
 .social-links {
@@ -263,6 +364,7 @@ body.light-mode .social-links a { color: var(--light-text); }
     color: var(--dark-accent);
     transform: scale(1.2);
 }
+body.light-mode .social-links a:hover { color: var(--light-accent); }
 
 /* --- Animations --- */
 @keyframes fadeIn {
