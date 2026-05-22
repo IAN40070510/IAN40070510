@@ -6,17 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>林柏璋 | 個人網站</title>
 
-    <!-- Google Fonts: Poppins for a modern look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,7 +24,7 @@
             <a href="#" class="logo">IAN</a>
             <ul>
                 <li><a href="#about">關於我</a></li>
-                <!-- <li><a href="#projects">專案</a></li> -->
+                <li><a href="#publications">學術發表</a></li>
                 <li><a href="#competitions">比賽經歷</a></li>
                 <li><a href="#licenses">證照</a></li>
                 <li><a href="#contact">聯絡</a></li>
@@ -40,78 +37,61 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section id="hero">
             <div class="hero-content">
-                <!-- 文字內容 -->
                 <div class="hero-text">
                     <h1>林柏璋</h1>
                     <p class="subtitle">國立臺北科技大學 資訊與財金管理系</p>
                 </div>
-                <!-- 圖片 -->
                 <img src="Me.jpg" alt="個人照片" class="hero-image">
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="fade-in">
             <h2>關於我</h2>
-            <p>我專注於程式開發、人工智慧應用與資安實作，具備跨資訊管理與技術的實務經驗。曾參與 HITCON 2025 及 NVIDIA GTC Taipei at COMPUTEX 等專業社群活動，持續關注最新攻防技術與
-                AI 應用安全議題。</p>
+            <p>我專注於資安主動防禦、大型語言模型應用整合與系統開發，具備跨資訊管理與實務技術的整合能力。曾參與 HITCON 2025 及 NVIDIA CEO Jensen Huang Keynote at COMPUTEX 2024 等指標性活動，致力於將前沿 AI 技術與資安防禦架構落地結合。</p>
 
             <h3 class="skills-title">專業技能</h3>
             <p class="skills">
-                <strong>人工智慧與大語言模型開發：</strong>熟悉提示工程（Prompt Engineering）及 NVIDIA 深度學習平台應用。<br>
-                <strong>資訊安全與系統防護：</strong>具備 IPAS 資訊安全工程師認證，擅長弱點分析、滲透測試與系統強化。<br>
-                <strong>嵌入式與網路系統整合：</strong>具備工業電子、網路架設與硬體維修能力，可進行完整軟硬體系統設計。
+                <strong>資安與 AI 應用：</strong>具備主動防禦與動態欺敵系統開發經驗，熟悉大型語言模型 (Llama 3.1)、RAG 技術、決策引擎 (XGBoost、DistilBERT) 的防禦整合應用。<br>
+                <strong>後端與系統架喚：</strong>熟悉 Linux 環境與 Docker 容器化部署，具備使用 FastAPI 建立 API 閘道器，以及 Redis 與 SQLite 雙層狀態管理之實作經驗。<br>
+                <strong>開發工具與工作流：</strong>熟練運用 Python、C/C++，習慣以 Git 進行版本控制，並善用 AI 輔助開發工具 (Cursor / Copilot) 提升系統構建效率。
             </p>
-
-            <p>我致力於將理論與實作結合，期望在 AI 與資安領域中成為能解決實際問題的工程師。</p>
         </section>
 
-
-        <!-- 
-        Projects Section - 此區塊已被註解，日後可移除註解來啟用
-        <section id="projects" class="fade-in">
-            <h2>我的專案</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="lovepik-background-material-for-science-and-technology-image_500480720.jpg" alt="專案一截圖">
-                    <h3>專案一：校園社團管理系統</h3>
-                    <p>使用 Python Django 框架開發的社團管理平台，提供活動發布、成員管理與線上報名功能，簡化社團行政流程。</p>
-                    <a href="#" class="btn" target="_blank">查看專案</a>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250/1A202C/FFFFFF?text=Project+Beta" alt="專案二截圖">
-                    <h3>專案二：個人理財儀表板</h3>
-                    <p>結合 FinTech 概念，使用 React 與 Chart.js 打造的個人化理財儀表板，幫助使用者追蹤與分析個人收支狀況。</p>
-                    <a href="#" class="btn" target="_blank">查看專案</a>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250/1A202C/FFFFFF?text=Project+Gamma" alt="專案三截圖">
-                    <h3>專案三：網頁版貪食蛇遊戲</h3>
-                    <p>運用原生 JavaScript 與 HTML5 Canvas 實現的經典貪食蛇遊戲，旨在練習 DOM 操作與遊戲邏輯設計。</p>
-                    <a href="#" class="btn" target="_blank">查看專案</a>
+        <section id="publications" class="fade-in">
+            <h2>學術發表</h2>
+            <div class="list-container">
+                <div class="list-item">
+                    <h3>第 37 屆中華民國資訊管理學術研討會 (ICIM 2026) — 論文發表人</h3>
+                    <p><strong>論文題目：</strong>MirSen Defense System (MSDSS): 基於 AI Agent 之自主偽裝與隔離防禦系統</p>
+                    <p style="margin-top: 5px; color: #718096; font-size: 0.95rem;">獨立設計階層式四層過濾架構（特徵碼、唯讀向量比對、XGBoost、DistilBERT）精準攔截變異 API 攻擊，並利用 RAG 搭配輕量化大型語言模型（Llama 3.1 8B）建構具高時序一致性之虛假回應沙盒，主動耗竭惡意代理人之算力資源。</p>
                 </div>
             </div>
         </section>
-        -->
 
-        <!-- Competitions Section -->
         <section id="competitions" class="fade-in">
             <h2>比賽經歷</h2>
             <div class="list-container">
                 <div class="list-item">
-                    <h3>第28屆TDK盃全國大專校院創思設計與製作競賽</h3>
-                    <p>遙控組 競賽獎第四名、創意獎佳作、工作團隊紀律獎</p>
+                    <h3>2026 Best AI Awards (AI 應用學生組)</h3>
+                    <p>佳作</p>
                 </div>
                 <div class="list-item">
                     <h3>第四屆安全達人養成計劃 暨資安戰士挑戰賽</h3>
-                    <p>校園學生組 Desktop場 亞軍</p>
+                    <p>校園學生組 Desktop 場 亞軍 (第二名)</p>
                 </div>
                 <div class="list-item">
-                    <h3>第四屆安全達人養成計劃 暨資安戰士挑戰賽</h3>
-                    <p>校園學生組 Mobile場 第六名</p>
+                    <h3>第28屆TDK盃全國大專校院創思設計與製作競賽 (遙控組)</h3>
+                    <p>競賽第四名、工作團隊紀律獎、創意獎佳作</p>
+                </div>
+                <div class="list-item">
+                    <h3>國立臺北科技大學機電學院 第四屆 AR 盃機器人競賽</h3>
+                    <p>第四名、最佳創意獎</p>
+                </div>
+                <div class="list-item">
+                    <h3>國立臺北科技大學機電學院 第十二屆 CR 盃機器人競賽</h3>
+                    <p>最佳機構獎</p>
                 </div>
                 <div class="list-item">
                     <h3>第18屆電腦鼠暨智慧輪型機器人競賽</h3>
@@ -120,32 +100,36 @@
             </div>
         </section>
 
-        <!-- Licenses Section -->
         <section id="licenses" class="fade-in">
-            <h2>相關證照</h2>
+            <h2>相關證照與課程</h2>
             <div class="list-container">
                 <div class="list-item">
-                    <h3>NVIDIA 开发基于提示工程的大语言模型（LLM）应用</h3>
+                    <h3>iPAS 資安工程師能力鑑定 — 初級證照</h3>
                 </div>
                 <div class="list-item">
-                    <h3>NVIDIA 深度學習基礎理論與實踐</h3>
+                    <h3>NVIDIA 證書 — 開發基於提示工程的大語言模型（LLM）應用</h3>
                 </div>
                 <div class="list-item">
-                    <h3>IPAS 資訊安全工程師 初級</h3>
+                    <h3>NVIDIA 證書 — 深度學習基礎理論與實踐</h3>
                 </div>
                 <div class="list-item">
-                    <h3>電腦硬體裝修乙級</h3>
+                    <h3>Coursera (Stanford & DeepLearning.AI) — Supervised Machine Learning</h3>
                 </div>
                 <div class="list-item">
-                    <h3>工業電子丙級</h3>
+                    <h3>Coursera (DeepLearning.AI) — Neural Networks and Deep Learning</h3>
                 </div>
                 <div class="list-item">
-                    <h3>網路架設丙級</h3>
+                    <h3>國家技術士 — 電腦硬體裝修 (乙級)</h3>
+                </div>
+                <div class="list-item">
+                    <h3>國家技術士 — 網路架設 (丙級)</h3>
+                </div>
+                <div class="list-item">
+                    <h3>國家技術士 — 工業電子 (丙級)</h3>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="fade-in">
             <h2>聯絡我</h2>
             <p>如果您對我的作品感興趣或有合作機會，歡迎隨時與我聯繫！</p>
@@ -166,10 +150,9 @@
                 <i class="fab fa-linkedin"></i>
             </a>
         </div>
-        <p>&copy; 2025 林柏璋. All Rights Reserved.</p>
+        <p>&copy; 2026 林柏璋. All Rights Reserved.</p>
     </footer>
 
-    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 
